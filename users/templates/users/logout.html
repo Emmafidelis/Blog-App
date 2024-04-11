@@ -1,16 +1,10 @@
 {% extends "blog/base.html" %}
 {% block content %}
-  <form id="frm_logout" method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <a href="javascript:document.getElementById('frm_logout').submit();"
-      class="px-5 py-3 rounded-xl bg-teal-600 hover:bg-teal-700">Logout</a>
-  </form>
-
-  <!-- <h2>You have been logged out</h2>
+  <h2>You have been logged out</h2>
   <div class="border-top pt-3">
     <small class="text-muted">
       <a class="ms-2" href="{% url 'login' %}">Log In Again</a>
     </small>
-  </div> -->
+  </div>
 {% endblock content %}
  
