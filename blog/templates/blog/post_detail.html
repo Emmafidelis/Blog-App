@@ -1,12 +1,12 @@
 {% extends "blog/base.html" %} {% block content %}
-<article class="row content-section">
+<article class="d-flex content-section">
   <img
     src="{{ object.author.profile.image.url }}"
     class="rounded-circle article-img"
   />
-  <div class="col-4">
+  <div class="col-12 flex-fill">
     <div class="article-metadata">
-      <a class="mr-2" href="#">{{ object.author }}</a>
+      <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
       <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
       {% if object.author == user %}
         <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
